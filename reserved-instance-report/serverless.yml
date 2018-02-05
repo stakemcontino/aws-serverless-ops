@@ -1,0 +1,17 @@
+# Comments...
+#
+
+service: reserved-instance-report
+
+provider:
+  name: aws
+  runtime: python2.7
+  profile: contino
+  stage: dev
+  region: eu-west-1
+
+functions:
+  reserved-instance-report:
+    handler: index.lambda_handler
+    events:
+      - schedule: cron(0 0 ? * 1 *)
